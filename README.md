@@ -1,3 +1,5 @@
+![Preview](https://raw.githubusercontent.com/billfienberg/hackernews-react-apollo/master/public/real-time-hacker-news-clone.gif)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
