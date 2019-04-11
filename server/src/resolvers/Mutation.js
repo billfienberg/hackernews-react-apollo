@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { APP_SECRET, getUserId } = require("../utils");
 
+// Original
 // function post(parent, args, context) {
 //   return context.prisma.createLink({
 //     url: args.url,
@@ -9,6 +10,16 @@ const { APP_SECRET, getUserId } = require("../utils");
 //   })
 // }
 
+// Incorrect (from docs)
+// function post(parent, { url, description }, ctx, info) {
+//   const userId = getUserId(ctx)
+//   return ctx.db.mutation.createLink(
+//     { data: { url, description, postedBy: { connect: { id: userId } } } },
+//     info,
+//   )
+// }
+
+// Correct
 function post(parent, { url, description }, ctx, info) {
   const userId = getUserId(ctx);
   return ctx.prisma.createLink(
